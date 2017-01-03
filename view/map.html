@@ -1,0 +1,12 @@
+{{if !rock && !currenturl && currentdevice && viewports[currentdevice]}}
+    <div class="map-inner col-xs-12">
+        {{each(rockid, rockconfig) map}}
+            <div class="frame vp-${currentdevice} col-xs-12 text-center">
+                <h3>
+                    ${rockconfig.label} : <a href="${rockconfig.link}?${rockconfig.params}">${rockconfig.link}?${rockconfig.params}</a>
+                </h3>
+                <iframe sandbox="allow-same-origin allow-forms allow-scripts" seamless width="${viewports[currentdevice].width}" height="${viewports[currentdevice].height}" src="${rockconfig.link}?${rockconfig.params}"></iframe>
+            </div>
+        {{/each}}
+    </div>
+{{/if}}

@@ -1,0 +1,67 @@
+*{vertical-align:top;}
+body {
+    position:relative;
+    padding:20px;
+    overflow-y:scroll;
+    font-family:sans-serif;
+}
+.icon-xs {
+    width:40px;
+}
+.logo {
+    width:100%;
+    padding:10px;
+}
+h2{margin:0 0 20px 0;}
+span.small{font-size:60%;vertical-align:middle;}
+.url{
+    margin:3px 0;
+    display:block;
+}
+.url input[type=text]{
+    border:solid 1px #cccccc;
+    width:85%;
+    margin:0 auto;
+    font-size:2em;
+    text-align:left;
+}
+.url input[type=submit]{display:none;}
+.mapoption {
+    display:inline-block;
+}
+#menu .navbar-nav {
+    display: inline-block;
+    float: none;
+}
+#title {
+    margin-top:40px;
+}
+#frames {
+    margin-bottom:10px;
+    padding-bottom:20px;
+    width: 100%;
+}
+.frames-inner {
+    width:12800px;
+}
+.frame {
+    margin-right:20px;
+    margin-bottom:10px;
+    float:left;
+}
+.frame:last-child {margin-right:0;}
+.frame img { 
+    vertical-align:middle;
+    width:60px;
+    margin-top:-10px;
+}
+.frame iframe {
+    padding:0;
+    border:1px solid #cccccc;
+    background:#f8f8f8;
+    overflow-x:hidden;
+    overflow-y:auto;    
+}
+.widthOnly {height:620px;}
+.widthOnly h2 span{display:none;}
+.widthOnly iframe {height:480px;}

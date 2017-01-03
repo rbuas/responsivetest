@@ -1,0 +1,18 @@
+{{if rock || currenturl}}
+    <div class="frames-inner col-xs-12">
+        {{each(vp, config) viewports}}
+            <div class="frame vp-${vp}">
+                <h3>
+                    <img class="icon" src="images/icon_res_${vp}.png" />
+                    <span>${config.width} x ${config.height}</span>
+                    <span class="${vp}">(${config.ref})</span>
+                </h3>
+                {{if currenturl}}
+                    <iframe sandbox="allow-same-origin allow-forms allow-scripts" seamless width="${config.width}" height="${config.height}" src="http://${currenturl}"></iframe>
+                {{else}}
+                    <iframe sandbox="allow-same-origin allow-forms allow-scripts" seamless width="${config.width}" height="${config.height}" src="${rock.link}?${rock.params}"></iframe>
+                {{/if}}
+            </div>
+        {{/each}}
+    </div>
+{{/if}}

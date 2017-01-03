@@ -1,0 +1,29 @@
+{{if message}}
+    <h3 class="text-center">${message}</h3>
+{{/if}}
+{{if currenturl}}
+    <h2 class="text-center">url : (<a href="${currenturl}">${currenturl}</a>)</h2>
+{{else rock}}
+    <h2 class="text-center">${rock.label} (<a href="${rock.link}?${rock.params}">${rock.link}?${rock.params}</a>)</h2>
+{{else currentdevice && viewports[currentdevice]}}
+    <h2 class="text-center">
+        map in 
+        <div class="mapoption nav-item dropdown">
+            <span class="navbar-link dropdown-toggle" href="#" title="chose the rock to test" id="navDevices" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{if currentdevice && viewports[currentdevice]}}
+                    <img class="icon-xs icon-xs-${currentdevice}" src="images/icon_res_${currentdevice}.png" />
+                    ${viewports[currentdevice].ref} (${viewports[currentdevice].width} x ${viewports[currentdevice].height})
+                {{/if}}
+                <span class="caret"></span>
+            </span>
+            <ul class="dropdown-menu" aria-labelledby="navDevices">
+                {{each(id, device) viewports}}
+                    <li class="mapoption-item dropdown-item {{if currentdevice && id == currentdevice}}active{{/if}}" data-option=${id}>
+                        <img class="icon-xs icon-xs-${id}" src="images/icon_res_${id}.png" />
+                        ${device.ref} (${device.width} x ${device.height})
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    </h2>
+{{/if}}

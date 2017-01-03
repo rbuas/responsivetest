@@ -1,0 +1,31 @@
+{{if map}}
+    <nav class="col-xs-12 navbar navbar-default navbar-fixed-top text-center">
+        <ul class="nav navbar-nav">
+            <li class="nav-item {{if !currentrock}}active{{/if}}">
+                <a class="navbar-link" href="#">map</a>
+            </li>
+            <li id="btnWidthOnly" class="nav-item">
+                <a class="navbar-link">width only</a>
+            </li>
+            <li class="nav-item dropdown {{if currentrock}}active{{/if}}">
+                <a class="navbar-link dropdown-toggle" href="#" title="chose the rock to test" id="navRocks" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    rocks
+                    {{if currentrock && map[currentrock]}}
+                        ${map[currentrock].label}
+                    {{/if}}
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navRocks">
+                    {{each(id, rockconfig) map}}
+                        <li><a class="dropdown-item" href="#${id}">${rockconfig.label}</a></li>
+                    {{/each}}
+                </ul>
+            </li>
+            <li class="url">
+                <form>
+                    <input id="urlInput" type="text" placeholder="type the url and hit enter to test it !" value="${currenturl}">
+                </form>
+            </li>
+        </ul>
+    </nav>
+{{/if}}
